@@ -1,0 +1,46 @@
+{
+  "name": "jobs-ejs",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/IrinaKhameeva/jobs-ejs#readme",
+  "bugs": {
+    "url": "https://github.com/IrinaKhameeva/jobs-ejs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IrinaKhameeva/jobs-ejs.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^5.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "eslint": "^9.37.0",
+    "express": "^5.1.0",
+    "express-async-error": "^0.0.2",
+    "express-rate-limit": "^8.1.0",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+  "host-csrf": "^2.0.0",
+  "mongoose": "^8.19.1",
+  "express-async-errors": "^3.1.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "prettier": "^3.6.2",
+    "xss-clean": "^0.1.4"
+  },
+    "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
+
