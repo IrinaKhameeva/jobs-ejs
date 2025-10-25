@@ -23,6 +23,7 @@
     "connect-flash": "^0.1.1",
     "connect-mongodb-session": "^5.0.0",
     "cookie-parser": "^1.4.7",
+    "csurf": "^1.11.0",
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "eslint": "^9.37.0",
@@ -31,16 +32,13 @@
     "express-rate-limit": "^8.1.0",
     "express-session": "^1.18.2",
     "helmet": "^8.1.0",
-  "host-csrf": "^2.0.0",
-  "mongoose": "^8.19.1",
-  "express-async-errors": "^3.1.1",
+    "host-csrf": "^2.0.0",
+    "mongoose": "^8.19.1",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
-    "prettier": "^3.6.2",
-    "xss-clean": "^0.1.4"
+    "prettier": "^3.6.2"
   },
-    "devDependencies": {
+  "devDependencies": {
     "nodemon": "^3.1.10"
   }
 }
-

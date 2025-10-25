@@ -2,7 +2,7 @@ const User = require("../models/User");
 const parseVErr = require("../utils/parseValidationErrors");
 
 const registerShow = (req, res) => {
-  res.render("register");
+  res.render("register", { _csrf: req.csrfToken() });
 };
 
 const registerDo = async (req, res, next) => {
@@ -26,6 +26,7 @@ const registerDo = async (req, res, next) => {
 };
 
 const logoff = (req, res) => {
+  console.log("Logging off user:", req.user ? req.user.email : "No user logged in");
   req.session.destroy(function (err) {
     if (err) {
       console.log(err);
