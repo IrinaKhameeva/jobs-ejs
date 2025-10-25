@@ -55,8 +55,7 @@ if (app.get("env") === "production") {
 
 app.use(session(sessionParms));
 
-const csrf = require("csurf");
-app.use(csrf());
+
 
 
 // Passport
@@ -68,12 +67,20 @@ app.use(passport.session());
 app.use(flash());
 
 // add CSRF token to all views
+const csrf = require("csurf");
+app.use(csrf());
 app.use((req, res, next) => {
   if (req.csrfToken) {
     res.locals._csrf = req.csrfToken();
   }
   next();
 });
+
+//app.use((req, res, next) => {
+//  res.locals._csrf = req.csrfToken(); // call csurf token method
+//  next();
+//});
+
 
 
 // storeLocals (after flash)
@@ -83,7 +90,10 @@ app.use(storeLocals);
 app.set("view engine", "ejs");
 
 // Routes
-app.get("/", (req, res) => res.render("index"));
+app.get("/", (req, res) => {
+  console.log("CSRF token:", req.csrfToken());
+  res.render("index");
+});
 app.use("/sessions", sessionRouter);
 app.use("/jobs", auth, jobsRouter);
 app.use("/secretWord", auth, secretWordRouter);
@@ -110,3 +120,5 @@ const start = async () => {
   }
 };
 start();
+
+

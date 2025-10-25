@@ -1,9 +1,20 @@
 <%- include("partials/head.ejs") %>
 <%- include("partials/header.ejs") %>
 <% if (user) { %>
+  <p>
     <a href="/secretWord">Click this link to view/change the secret word.</a>
+  </p>  
+
+    <!-- Logoff form with CSRF token -->
+  <form action="/sessions/logoff" method="POST" style="display:inline;">
+    <input type="hidden" name="_csrf" value="<%= _csrf %>">
+    <button type="submit">Log off</button>
+  </form>
+    
 <% } else { %>
     <a href="/sessions/logon">Click this link to logon.</a>
     <a href="/sessions/register">Click this link to register.</a>
 <% } %>
+<a href="/jobs"><button type="button">View Jobs</button></a>
+
 <%- include("partials/footer.ejs") %>

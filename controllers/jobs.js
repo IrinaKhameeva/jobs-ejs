@@ -12,7 +12,7 @@ exports.getAllJobs = async (req, res) => {
 
 // new job form
 exports.getNewJobForm = (req, res) => {
-  res.render("job-form", { job: {}, action: "/jobs", buttonText: "Create Job" });
+  res.render("job-form", { job: {}, action: "/jobs", buttonText: "Create Job",_csrf: req.csrfToken(), });
 };
 
 // Create new job
@@ -41,6 +41,7 @@ exports.getEditJobForm = async (req, res) => {
       job,
       action: `/jobs/update/${job._id}`,
       buttonText: "Update Job",
+      _csrf: req.csrfToken(),
     });
   } catch (err) {
     res.status(500).render("error", { message: err.message });
